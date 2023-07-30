@@ -13,8 +13,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.yandex.praktikum.pageObject.MainPage;
 import ru.yandex.praktikum.pageObject.OrderPage;
 
-import java.util.concurrent.TimeUnit;
-
 @RunWith(Parameterized.class)
 
 public class OrderPageTest {
@@ -27,6 +25,7 @@ public class OrderPageTest {
     private final String time;
     private final String comment;
     private final boolean isOrderButton;
+
     public OrderPageTest(String name, String lastName, String address, String metroStation, String numberPhone, String time, String comment, boolean isOrderButton) {
         this.name = name;
         this.lastName = lastName;
@@ -37,6 +36,7 @@ public class OrderPageTest {
         this.comment = comment;
         this.isOrderButton = isOrderButton;
     }
+
     @Parameterized.Parameters
     public static Object[][] getOrderData() {
         return new Object[][]{
@@ -46,12 +46,13 @@ public class OrderPageTest {
                 {"Артемий", "Лебедев", "Москва", "Чистые пруды", "77777777777", "14.08.2023", "постучите в дверь", false},
         };
     }
+
     @Before
     public void setupAll() {
-      WebDriverManager.chromedriver().setup();
-      webDriver = new ChromeDriver();
-  //  WebDriverManager.firefoxdriver().setup();
-  //  webDriver = new FirefoxDriver();
+       WebDriverManager.chromedriver().setup();
+        webDriver = new ChromeDriver();
+    //  WebDriverManager.firefoxdriver().setup();
+    //  webDriver = new FirefoxDriver();
     }
 
     @Test

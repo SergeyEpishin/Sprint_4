@@ -11,8 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.yandex.praktikum.pageObject.MainPage;
 
-import java.util.concurrent.TimeUnit;
-
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
@@ -41,10 +39,10 @@ public class MainPageTest {
 
     @Before
     public void init() {
-       WebDriverManager.chromedriver().setup();
-       webDriver = new ChromeDriver();
-  //   WebDriverManager.firefoxdriver().setup();
-  //   webDriver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        webDriver = new ChromeDriver();
+     //    WebDriverManager.firefoxdriver().setup();
+     //     webDriver = new FirefoxDriver();
 
     }
 

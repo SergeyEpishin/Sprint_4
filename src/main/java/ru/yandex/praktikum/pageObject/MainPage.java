@@ -66,7 +66,7 @@ public class MainPage {
     public void scrollToQuestion(By dropQuestion) {
         WebElement dropDownQuestionElement = webDriver.findElement(dropQuestion);
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", dropDownQuestionElement);
-        new WebDriverWait(webDriver, 3)
+        new WebDriverWait(webDriver, 10)
                 .until(ExpectedConditions.elementToBeClickable(dropDownQuestionElement));
     }
     public String clickDropDownList(String dropDownQuestion) {
